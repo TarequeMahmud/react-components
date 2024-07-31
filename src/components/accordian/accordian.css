@@ -1,0 +1,22 @@
+.acc-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.item {
+  background: #6e6b63;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  border: green solid 1px;
+  border-radius: 10px;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
