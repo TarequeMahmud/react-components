@@ -4,6 +4,13 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
+  height: 100vh;
+  width: 100vw;
+}
+
+.accordion {
+  max-width: 500px;
+  position: relative;
 }
 
 .item {
@@ -12,6 +19,7 @@
   padding: 10px 20px;
   border: green solid 1px;
   border-radius: 10px;
+  transition: max-height 0.3s ease-out;
 }
 
 .title {
@@ -20,3 +28,9 @@
   align-items: center;
   cursor: pointer;
 }
+
+/* .info {
+  border-radius: 5px;
+  border: 1px solid red;
+  padding: 4px;
+} */
