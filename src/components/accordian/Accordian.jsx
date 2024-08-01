@@ -6,7 +6,7 @@ export default function Accordian() {
   const [selected, setSelected] = useState(null);
   const [enableMultiple, setEnableMultiple] = useState(false);
   const [multiple, setMultiple] = useState([]);
-  const [buttonName, setButtonName] = useState("Enable Multiple Selection");
+  const [buttonColor, setButtonColor] = useState("unset");
 
   const handleSingleSelection = (itemId) =>
     setSelected(itemId === selected ? null : itemId);
@@ -22,18 +22,18 @@ export default function Accordian() {
   return (
     <div className="acc-wrapper">
       <button
+        className="button"
         onClick={() => {
           //a bug was here; due to enableMultiple
           let newEnableMultiple = !enableMultiple;
           setEnableMultiple(newEnableMultiple);
-          setButtonName(
-            newEnableMultiple
-              ? "Enable Single Selection"
-              : "Enable Multiple Selection"
-          );
+          setButtonColor(newEnableMultiple ? "red" : "unset");
+          if (newEnableMultiple === false) setMultiple([]);
+          else setSelected(null);
         }}
+        style={{ "--color": buttonColor }}
       >
-        {buttonName}
+        Enable Multiple Selection
       </button>
       <div className="accordion">
         {data && data.length > 0 ? (
