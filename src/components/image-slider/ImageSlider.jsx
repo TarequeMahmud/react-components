@@ -40,6 +40,7 @@ export default function ImageSlider() {
           <img
             key={image.id}
             src={image.download_url}
+            alt={image.download_url}
             className={currentSlide === index ? "image" : "image hide"}
           />
         ))
@@ -47,6 +48,21 @@ export default function ImageSlider() {
         <p>No image found</p>
       )}
       <SlArrowRight className="arrow arrow-right" onClick={handleNext} />
+      <span className="circle">
+        {images && images.length
+          ? images.map((_, index) => (
+              <button
+                key={index}
+                className={
+                  currentSlide === index
+                    ? "indicator"
+                    : "indicator inactive-indicator"
+                }
+                onClick={() => setCurrentSlide(index)}
+              ></button>
+            ))
+          : null}
+      </span>
     </div>
   );
 }

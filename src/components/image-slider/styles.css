@@ -8,12 +8,11 @@
   align-items: center;
 }
 
-img {
+.image {
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 7px #666;
   width: 100%;
   height: 100%;
-  border: 2px solid #fff;
-  border-radius: 10px;
-  box-shadow: 0px 0px 7px #666;
 }
 
 .arrow {
@@ -31,6 +30,27 @@ img {
   right: 1rem;
 }
 
+.circle {
+  display: flex;
+  position: absolute;
+  bottom: 1rem;
+}
+
+.indicator {
+  background-color: #ffffff;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  margin: 0 0.2rem;
+  cursor: pointer;
+  font-size: 0;
+}
+
 .hide {
   display: none;
+}
+.inactive-indicator {
+  background-color: gray;
 }
