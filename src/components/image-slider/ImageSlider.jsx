@@ -6,6 +6,7 @@ export default function ImageSlider() {
   const [images, setImages] = useState([]);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loading, setLoading] = useState(false);
+  const [showScrollControls, setShowScrollControls] = useState(true);
   const fetchImageUrl = async () => {
     try {
       setLoading(true);
@@ -30,11 +31,39 @@ export default function ImageSlider() {
   const handlePrevious = () =>
     setCurrentSlide(currentSlide === 0 ? 0 : currentSlide - 1);
 
+  const handleMouseOver = () => setShowScrollControls(true);
+  const handleMouseOut = () =>
+    setTimeout(() => setShowScrollControls(false), 2000);
+
   return loading ? (
     <p>Loading</p>
   ) : (
-    <div className="image-container">
-      <SlArrowLeft className="arrow arrow-left" onClick={handlePrevious} />
+    <div
+      className="image-container"
+      onMouseMove={handleMouseOver}
+      onMouseLeave={handleMouseOut}
+    >
+      {showScrollControls && (
+        <>
+          <SlArrowLeft className="arrow arrow-left" onClick={handlePrevious} />
+          <SlArrowRight className="arrow arrow-right" onClick={handleNext} />
+          <span className="circle">
+            {images && images.length
+              ? images.map((_, index) => (
+                  <button
+                    key={index}
+                    className={
+                      currentSlide === index
+                        ? "indicator"
+                        : "indicator inactive-indicator"
+                    }
+                    onClick={() => setCurrentSlide(index)}
+                  ></button>
+                ))
+              : null}
+          </span>
+        </>
+      )}
       {images && images.length ? (
         images.map((image, index) => (
           <img
@@ -47,22 +76,6 @@ export default function ImageSlider() {
       ) : (
         <p>No image found</p>
       )}
-      <SlArrowRight className="arrow arrow-right" onClick={handleNext} />
-      <span className="circle">
-        {images && images.length
-          ? images.map((_, index) => (
-              <button
-                key={index}
-                className={
-                  currentSlide === index
-                    ? "indicator"
-                    : "indicator inactive-indicator"
-                }
-                onClick={() => setCurrentSlide(index)}
-              ></button>
-            ))
-          : null}
-      </span>
     </div>
   );
 }
