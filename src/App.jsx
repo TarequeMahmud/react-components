@@ -4,6 +4,7 @@ import "./App.css";
 // import SearchAutocomplete from "./components/search-autocomplete/SearchAutocomplete";
 import ImageSlider from "./components/image-slider/ImageSlider";
 import TreeView from "./components/tree-view/TreeView";
+import ScrollIndicator from "./components/scroll-indicator/ScrollIndicator";
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
       {/* <Accordian /> */}
       {/* <SearchAutocomplete /> */}
       {/* <ImageSlider /> */}
-      <TreeView />
+      {/* <TreeView /> */}
+      <ScrollIndicator />
     </div>
   );
 }
