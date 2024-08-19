@@ -5,15 +5,10 @@ import "./styles.css";
 export default function StarRating({ noOfStar = 5 }) {
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
-  function handleClick(currentIndex) {
-    setRating(currentIndex);
-  }
-  function hadleMouseEnter(currentIndex) {
-    setHover(currentIndex);
-  }
-  function handleMouseLeave() {
-    setHover(rating);
-  }
+  const handleClick = (currentIndex) => setRating(currentIndex);
+
+  const hadleMouseEnter = (currentIndex) => setHover(currentIndex);
+  const handleMouseLeave = () => setHover(rating);
 
   return (
     <div>
