@@ -1,5 +1,6 @@
 import "./App.css";
 import TestHideOutsideHook from "./components/hide-click-outside/testHideOutsideHook";
+import TestTab from "./components/tabs/Test";
 // import Accordian from "./components/accordian/Accordian";
 // import SearchAutocomplete from "./components/search-autocomplete/SearchAutocomplete";
 // import ImageSlider from "./components/image-slider/ImageSlider";
@@ -18,7 +19,8 @@ function App() {
       {/* <ScrollIndicator /> */}
       {/* <ColorMode /> */}
       {/* <StarRating /> */}
-      <TestHideOutsideHook />
+      {/* <TestHideOutsideHook /> */}
+      <TestTab />
     </div>
   );
 }
