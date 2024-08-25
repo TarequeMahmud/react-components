@@ -1,4 +1,5 @@
 import "./App.css";
+import ScrollToTopBottom from "./components/scroll/ScrolToTopBottom";
 // import TestHideOutsideHook from "./components/hide-click-outside/testHideOutsideHook";
 // import TestTab from "./components/tabs/Test";
 // import TestUseFetch from "./components/use-fetch/TestUseFetch";
@@ -23,6 +24,7 @@ function App() {
       {/* <TestHideOutsideHook /> */}
       {/* <TestTab /> */}
       {/* <TestUseFetch /> */}
+      <ScrollToTopBottom />
     </div>
   );
 }
