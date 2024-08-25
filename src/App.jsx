@@ -1,6 +1,7 @@
 import "./App.css";
-import TestHideOutsideHook from "./components/hide-click-outside/testHideOutsideHook";
-import TestTab from "./components/tabs/Test";
+// import TestHideOutsideHook from "./components/hide-click-outside/testHideOutsideHook";
+// import TestTab from "./components/tabs/Test";
+// import TestUseFetch from "./components/use-fetch/TestUseFetch";
 // import Accordian from "./components/accordian/Accordian";
 // import SearchAutocomplete from "./components/search-autocomplete/SearchAutocomplete";
 // import ImageSlider from "./components/image-slider/ImageSlider";
@@ -20,7 +21,8 @@ function App() {
       {/* <ColorMode /> */}
       {/* <StarRating /> */}
       {/* <TestHideOutsideHook /> */}
-      <TestTab />
+      {/* <TestTab /> */}
+      {/* <TestUseFetch /> */}
     </div>
   );
 }
